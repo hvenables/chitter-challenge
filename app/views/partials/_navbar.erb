@@ -19,7 +19,14 @@
       <% if current_user %>
         <ul class="nav navbar-nav navbar-right">
           <li><a> Hello, <%= current_user.username.capitalize %>!</a></li>
-          <li><a href="/" id="deleteSession">Sign out</a></li>
+          <li>
+            <form method='post' action='/sessions'>
+              <input type='hidden' name='_method' value='delete'>
+              <label for="signout" style="font-weight: normal; height: 30px; line-height: 50px; padding: 0;">Sign Out
+                <input id="signout" class="delete" type='submit'></button>
+              </label>
+            </form>
+          </li>
         </ul>
       <% else %>
       <ul class="nav navbar-nav navbar-right">

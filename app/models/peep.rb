@@ -7,5 +7,5 @@ class Peep
   property :created_at, DateTime
 
   belongs_to :user
-  has n, :replies
+  has n, :replies, constraint: :destroy
 end
